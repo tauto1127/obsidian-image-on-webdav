@@ -25,12 +25,18 @@ interface ClipboardManager {
 export interface ImgurPluginSettings {
   uploadStrategy: string;
   clientId: string;
+  clientPassword: string;
+  clientUrl: string;
+  clientPath: string;
   showRemoteUploadConfirmation: boolean;
 }
 
 const DEFAULT_SETTINGS: ImgurPluginSettings = {
   uploadStrategy: UploadStrategy.ANONYMOUS_IMGUR.id,
   clientId: null,
+  clientPassword: null,
+  clientUrl: null,
+  clientPath: null,
   showRemoteUploadConfirmation: true,
 };
 

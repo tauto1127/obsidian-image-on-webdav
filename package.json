@@ -1,7 +1,7 @@
 {
-  "name": "obsidian-imgur-plugin",
-  "version": "2.1.1",
-  "description": "This plugin uploads images from your clipboard to imgur.com and embeds uploaded image to your note",
+  "name": "obsidian-webdav-plugin",
+  "version": "10.0.0",
+  "description": "This plugin uploads images from your clipboard to Webdav / your Nextcloud and embeds uploaded image to your note",
   "main": "main.js",
   "scripts": {
     "dev": "node esbuild.config.mjs",
@@ -16,9 +16,9 @@
   },
   "keywords": [
     "obsidian.md",
-    "imgur.com"
+    "webdav"
   ],
-  "author": "Kirill Gavrilov",
+  "author": "Lars",
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^16.1.0",
@@ -46,5 +46,8 @@
   "lint-staged": {
     "*.{ts,js,css,md}": "prettier --write",
     "*.ts": "eslint --cache --fix"
+  },
+  "dependencies": {
+    "nextcloud-link": "^1.2.9"
   }
 }
