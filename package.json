@@ -37,7 +37,7 @@
     "eslint-plugin-import": "^2.25.4",
     "husky": "^7.0.4",
     "lint-staged": "^12.3.1",
-    "obsidian": "^0.13.21",
+    "obsidian": "^0.13.30",
     "obsidian-plugin-cli": "^0.8.1",
     "prettier": "2.5.1",
     "tslib": "^2.3.1",
@@ -48,6 +48,6 @@
     "*.ts": "eslint --cache --fix"
   },
   "dependencies": {
-    "nextcloud-link": "^1.2.9"
+    "webdav": "^4.8.0"
   }
 }
