@@ -1,4 +1,14 @@
-# Obsidian Imgur Plugin
+# Obsidian Webdav Plugin
+
+
+
+- This is a fork of the Imgur Plugin.
+- The Readme below is to be changed.
+- Uses the "anonymous imgur upload" (not updated UI yet)
+- Uploads to your Webdav / Nextcloud / Owncloud Server instead of Imgur.
+
+
+----
 
 [![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=gavvvr_obsidian-imgur-plugin&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=gavvvr_obsidian-imgur-plugin)
 [![Installations count](https://img.shields.io/github/downloads/gavvvr/obsidian-imgur-plugin/main.js.svg)][installation-instructions]

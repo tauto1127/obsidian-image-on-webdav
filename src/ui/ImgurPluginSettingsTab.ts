@@ -7,7 +7,7 @@ import ImgurAuthenticationStatusItem from './ImgurAuthenticationStatus'
 import ApiError from 'src/uploader/ApiError'
 import { NewAlbumModal } from './NewAlbumModal'
 
-const REGISTER_CLIENT_URL = 'https://api.imgur.com/oauth2/addclient'
+const REGISTER_CLIENT_URL = "dummy/oauth2/addclient";
 
 export default class ImgurPluginSettingsTab extends PluginSettingTab {
   plugin: ImgurPlugin
@@ -103,17 +103,68 @@ export default class ImgurPluginSettingsTab extends PluginSettingTab {
     new Setting(containerEl)
       .setName('Client ID')
       .setTooltip(
-        `Client ID is required for anonymous images upload. If you do not provide your own Client ID, the one shipped with the plugin and shared with many other users will be used. If you face issues with images upload, it's better generate your own Client ID"`,
+        // `Client ID is required for anonymous images upload. If you do not provide your own Client ID, the one shipped with the plugin and shared with many other users will be used. If you face issues with images upload, it's better generate your own Client ID"`,
+        `Webdav Username`
       )
       .setDesc(ImgurPluginSettingsTab.clientIdSettingDescription())
       .addText((text) =>
         text
-          .setPlaceholder('Enter your client_id')
+// <<<<<<< HEAD
+//           .setPlaceholder('Enter your client_id')
+//           .setValue(this.plugin.settings.clientId)
+//           .onChange((value) => {
+//             this.plugin.settings.clientId = value
+//           }),
+//       )
+// =======
+          .setPlaceholder("Enter your username")
           .setValue(this.plugin.settings.clientId)
           .onChange((value) => {
-            this.plugin.settings.clientId = value
-          }),
+            this.plugin.settings.clientId = value;
+          })
+      );
+      new Setting(containerEl)
+      .setName("Client Password")
+      .setTooltip(
+        `Webdav Password`
       )
+      .setDesc(ImgurPluginSettingsTab.clientIdSettingDescription())
+      .addText((text) =>
+        text
+          .setPlaceholder("Enter your password")
+          .setValue(this.plugin.settings.clientPassword)
+          .onChange((value) => {
+            this.plugin.settings.clientPassword = value;
+          })
+      );
+      new Setting(containerEl)
+      .setName("Client Path")
+      .setTooltip(
+        `Webdav Path, i.e. /abc`
+      )
+      .setDesc(ImgurPluginSettingsTab.clientIdSettingDescription())
+      .addText((text) =>
+        text
+          .setPlaceholder(`Webdav Path, i.e. /abc`)
+          .setValue(this.plugin.settings.clientPath)
+          .onChange((value) => {
+            this.plugin.settings.clientPath = value;
+          })
+      );
+      new Setting(containerEl)
+      .setName("Webdav URL")
+      .setTooltip(
+        `Webdav URL`
+      )
+      .setDesc(ImgurPluginSettingsTab.clientIdSettingDescription())
+      .addText((text) =>
+        text
+          .setPlaceholder("i.e. https://cloud.nextcloud.com")
+          .setValue(this.plugin.settings.clientUrl)
+          .onChange((value) => {
+            this.plugin.settings.clientUrl = value;
+          })
+      );
   }
 
   private static clientIdSettingDescription() {

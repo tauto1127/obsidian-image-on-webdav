@@ -19,9 +19,9 @@
   },
   "keywords": [
     "obsidian.md",
-    "imgur.com"
+    "webdav"
   ],
-  "author": "Kirill Gavrilov",
+  "author": "Lars",
   "license": "MIT",
   "devDependencies": {
     "@commitlint/cli": "^19.2.1",
@@ -54,5 +54,8 @@
   "lint-staged": {
     "*.{ts,js,css,md}": "prettier --write",
     "*.ts": "eslint --cache --fix"
+  },
+  "dependencies": {
+    "webdav": "^4.8.0"
   }
 }
