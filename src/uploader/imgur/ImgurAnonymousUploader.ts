@@ -30,10 +30,7 @@
 //       handleImgurErrorResponse(resp)
 //     }
 //     return (resp.json as ImgurPostData).data.link
-import { Readable } from "stream";
-import { ImgurPostData } from "../../imgur/imgurResponseTypes";
 import ImageUploader from "../ImageUploader";
-import { handleImgurErrorResponse } from "../../imgur/ImgurClient";
 import { requestUrl } from "obsidian";
 
 export default class ImgurAnonymousUploader implements ImageUploader {
@@ -67,20 +64,20 @@ export default class ImgurAnonymousUploader implements ImageUploader {
         .join("");
     };
     const innerpath = `${this.clientPath}/${rndf()}.png`;
-    const cPath = `remote.php/dav/files/${this.clientId}${innerpath}`;
-    const bufx = await image.arrayBuffer();
-    const fpUpl = await requestUrl({
-      url: `${this.clientUrl}/${cPath}`,
-      method: "PUT",
-      headers: {
-        Authorization:
-          "Basic " +
-          Buffer.from(this.clientId + ":" + this.clientPassword).toString(
-            "base64"
-          ),
-      },
-      body: bufx,
-    });
+    // const cPath = `remote.php/dav/files/${this.clientId}${innerpath}`;
+    // const bufx = await image.arrayBuffer();
+    // const fpUpl = await requestUrl({
+    //   url: `${this.clientUrl}/${cPath}`,
+    //   method: "PUT",
+    //   headers: {
+    //     Authorization:
+    //       "Basic " +
+    //       Buffer.from(this.clientId + ":" + this.clientPassword).toString(
+    //         "base64"
+    //       ),
+    //   },
+    //   body: bufx,
+    // });
 
     const lnkResp = await requestUrl({
       url: `${this.clientUrl}/ocs/v2.php/apps/files_sharing/api/v1/shares`,
